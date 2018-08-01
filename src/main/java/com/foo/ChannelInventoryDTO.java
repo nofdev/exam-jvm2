@@ -1,8 +1,15 @@
 package com.foo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ChannelInventoryDTO implements Serializable{
 
     /**
@@ -14,19 +21,4 @@ public class ChannelInventoryDTO implements Serializable{
      */
     private BigDecimal inventory;
 
-    public String getChannelCode() {
-        return channelCode;
-    }
-
-    public void setChannelCode(String channelCode) {
-        this.channelCode = channelCode;
-    }
-
-    public BigDecimal getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(BigDecimal inventory) {
-        this.inventory = inventory;
-    }
 }
