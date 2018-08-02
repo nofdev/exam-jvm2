@@ -25,9 +25,9 @@ public class SkuInfoDTO implements Serializable{
     /**
      * itemid
      */
-    private String itemId;
+    private String spuId;
     /**
-     * 商品类型, 原始商品:ORIGIN; ITEM商品: ITEM
+     * 商品类型, 原始商品:ORIGIN; 数字化商品: DIGITAL
      */
     private String skuType;
 }

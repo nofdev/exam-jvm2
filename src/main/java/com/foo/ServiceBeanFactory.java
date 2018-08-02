@@ -36,7 +36,7 @@ public enum ServiceBeanFactory {
                 SkuEntity skuEntity = ServiceBeanFactory.getInstance().skuEntityMap.get(it);
                 if (skuEntity != null) {
                     return new SkuInfoDTO(skuEntity.getId(), skuEntity.getName(), skuEntity.getArtNo(),
-                        skuEntity.getItemId(), skuEntity.getSkuType());
+                        skuEntity.getSpuId(), skuEntity.getSkuType());
                 } else {
                     return null;
                 }
@@ -98,8 +98,8 @@ public enum ServiceBeanFactory {
                 skuEntity.setSkuType("ORIGIN");
                 skuEntity.setArtNo("xyz" + Math.floorMod(i, 3));
             } else {
-                skuEntity.setSkuType("ITEM");
-                skuEntity.setItemId("1000" + Math.floorMod(i, 3));
+                skuEntity.setSkuType("DIGITAL");
+                skuEntity.setSpuId("1000" + Math.floorMod(i, 3));
             }
             BigDecimal price = new BigDecimal(new Random().nextInt(100) - 1, new MathContext(2, RoundingMode.HALF_UP));
             skuEntity.setPrice(price);
@@ -124,7 +124,7 @@ class SkuEntity {
     private String id;
     private String name;
     private String artNo;
-    private String itemId;
+    private String spuId;
     private String skuType;
     private BigDecimal price;
     /**
