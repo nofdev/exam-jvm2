@@ -10,6 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SkuInfoDTO implements Serializable{
+    private static final long serialVersionUID = -1473328451285811238L;
     /**
      * SKU id
      */

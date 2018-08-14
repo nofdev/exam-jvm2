@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -120,7 +121,9 @@ public enum ServiceBeanFactory {
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-class SkuEntity {
+class SkuEntity implements Serializable{
+    private static final long serialVersionUID = -3127883340334044599L;
+
     private String id;
     private String name;
     private String artNo;
