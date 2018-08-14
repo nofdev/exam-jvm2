@@ -102,12 +102,12 @@ public enum ServiceBeanFactory {
                 skuEntity.setSkuType("DIGITAL");
                 skuEntity.setSpuId("1000" + Math.floorMod(i, 3));
             }
-            BigDecimal price = new BigDecimal(new Random().nextInt(100) - 1, new MathContext(2, RoundingMode.HALF_UP));
+            BigDecimal price = new BigDecimal(new Random().nextInt(100) + 1, new MathContext(2, RoundingMode.HALF_UP));
             skuEntity.setPrice(price);
             List<ChannelInventoryDTO> inventoryDTOS = new ArrayList<>();
-            BigDecimal miao = new BigDecimal(new Random().nextInt(50) - 1, new MathContext(2, RoundingMode.HALF_UP));
+            BigDecimal miao = new BigDecimal(new Random().nextInt(50) + 1, new MathContext(2, RoundingMode.HALF_UP));
             inventoryDTOS.add(new ChannelInventoryDTO("MIAO", miao));
-            BigDecimal tmall = new BigDecimal(new Random().nextInt(100) - 1, new MathContext(2, RoundingMode.HALF_UP));
+            BigDecimal tmall = new BigDecimal(new Random().nextInt(100) + 1, new MathContext(2, RoundingMode.HALF_UP));
             inventoryDTOS.add(new ChannelInventoryDTO("TMALL", tmall));
 
             skuEntity.setInventoryDTOS(inventoryDTOS);
