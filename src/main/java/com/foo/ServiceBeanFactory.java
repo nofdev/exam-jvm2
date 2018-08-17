@@ -27,6 +27,9 @@ public enum ServiceBeanFactory {
 
     private final Map<String, SkuEntity> skuEntityMap = new HashMap<>();
 
+    /**
+     * 这是一个 mock 实现, 请不要修改
+     */
     private final SkuService skuService = new SkuService() {
         @Override
         public List<SkuInfoDTO> findByIds(List<String> ids) {
@@ -47,6 +50,9 @@ public enum ServiceBeanFactory {
         }
     };
 
+    /**
+     * 这是一个 mock 实现, 请不要修改
+     */
     private final PriceService priceService = new PriceService() {
         @Override
         public BigDecimal getBySkuId(String skuId) {
@@ -59,6 +65,9 @@ public enum ServiceBeanFactory {
         }
     };
 
+    /**
+     * 这是一个 mock 实现, 请不要修改
+     */
     private final InventoryService inventoryService = new InventoryService() {
         @Override
         public List<ChannelInventoryDTO> getBySkuId(String skuId) {
@@ -71,6 +80,12 @@ public enum ServiceBeanFactory {
         }
     };
 
+    /**
+     * TODO 这个地方是我的坑, 没给大家留出注册自己 service 的方法, 稍后改进.
+     * @param interfaceClass
+     * @param <T>
+     * @return
+     */
     public <T> T getServiceBean(Class<T> interfaceClass) {
         if (interfaceClass == SkuService.class) {
             return (T)this.skuService;
@@ -84,6 +99,9 @@ public enum ServiceBeanFactory {
 
     }
 
+    /**
+     * 这是一个 mock 实现, 请不要修改
+     */
     ServiceBeanFactory() {
         // 初始化了100个 sku entity
         for (int i = 1; i <= 100; i++) {
